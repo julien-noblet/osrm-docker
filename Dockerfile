@@ -1,4 +1,6 @@
 FROM ubuntu:14.04
+VOLUME /data
+ENV $PBF "http://download.geofabrik.de/europe/france/pays-de-la-loire-latest.osm.pbf"
 
 RUN \
   DEBIAN_FRONTEND=noninteractive apt-get update && \
@@ -21,6 +23,4 @@ RUN \
 WORKDIR /build
 ADD run.sh run.sh
 EXPOSE 5000
-VOLUME /data
-ENV $PBF
-CMD run.sh $PBF 
+ENTRYPOINT ["run.sh", "$PBF"] 
