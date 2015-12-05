@@ -21,3 +21,6 @@ RUN \
 WORKDIR /build
 ADD run.sh run.sh
 EXPOSE 5000
+VOLUME /data
+ENV $PBF
+CMD run.sh $PBF 
