@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 VOLUME /data
-ENV $PBF "http://download.geofabrik.de/europe/france/pays-de-la-loire-latest.osm.pbf"
+ENV PBF "http://download.geofabrik.de/europe/france/pays-de-la-loire-latest.osm.pbf"
 
 RUN apt-get update
 RUN apt-get install -y build-essential git curl \
